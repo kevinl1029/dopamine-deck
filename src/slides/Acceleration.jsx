@@ -5,81 +5,89 @@ const timelineEvents = [
     id: 'opus-45',
     date: 'Nov 24, 2025',
     label: 'Opus 4.5',
-    position: 4, // Was 15
+    position: 4,
     size: 22,
     headline: 'Claude Opus 4.5 Released',
     description: 'One of the most capable AI models ever built. Overnight, regular people can build real software by describing what they want. "Vibe coding" enters the lexicon.',
     impact: 'The barrier between idea and execution nearly disappears.',
+    image: '/opus45-announce.jpg',
   },
   {
     id: 'epstein-act',
     date: 'Nov 19, 2025',
     label: 'Epstein Act',
-    position: 12, // Was 25
+    position: 12,
     size: 18,
     headline: 'Epstein Files Transparency Act Signed',
     description: 'Federal legislation mandating release of documents related to Jeffrey Epstein. The gate opens.',
     impact: null,
+    image: '/epstein-act.jpg',
   },
   {
     id: 'epstein-release',
     date: 'Jan 30, 2026',
     label: '3.5M Pages',
-    position: 30, // Was 35
+    position: 30,
     size: 28,
     headline: 'DOJ Releases 3.5 Million Pages',
     description: 'Names. Connections. Decades of influence that operated in the dark, suddenly in the light. Congress reviewing unredacted files in secure facilities.',
     impact: 'The strings being pulled are now being named.',
+    image: '/epstein-doj.png',
   },
   {
     id: 'legal-plugin',
     date: 'Feb 3, 2026',
     label: 'Legal Plugin',
-    position: 65, // Was 48. Start jumping now
+    position: 65,
     size: 26,
     headline: 'Claude Legal Plugin',
     description: 'Anthropic unveils AI legal document review, risk flagging, NDA triage, compliance tracking.',
     impact: '$285 BILLION wiped in a single day. Thomson Reuters -18%. RELX -14%. Wolters Kluwer -13%.',
+    image: '/legal-plugin.jpg',
   },
   {
     id: 'opus-46',
     date: 'Feb 5, 2026',
     label: 'Opus 4.6',
-    position: 78, // Was 55
+    position: 78,
     size: 30,
     headline: 'Claude Opus 4.6 — Agent Teams',
     description: '1 million token context. Can orchestrate entire teams of autonomous AI agents collaborating on complex projects.',
     impact: 'Cumulative selloff approaches $1 TRILLION. FactSet -10%. Fortune headline: "A trillion-dollar selloff."',
+    image: '/opus45.png',
   },
   {
     id: 'code-security',
     date: 'Feb 20, 2026',
     label: 'Code Security',
-    position: 88, // Was 65
+    position: 88,
     size: 24,
     headline: 'Claude Code Security',
     description: 'AI-powered vulnerability detection. Found 500+ vulnerabilities in production codebases during testing. "Reasons about code like a human security researcher."',
     impact: 'Cybersecurity flash crash. CrowdStrike -8%. Cloudflare -8.1%. SailPoint -9.4%. Okta -9.2%.',
+    image: '/code-security.jpg',
   },
   {
     id: 'cobol',
     date: 'Feb 23, 2026',
     label: 'COBOL Blog Post',
-    position: 95, // Was 75
+    position: 95,
     size: 28,
     headline: 'A Blog Post Crashes IBM',
     description: 'Anthropic publishes a blog post about modernizing COBOL with Claude Code. Not a product launch. Not a demo. A blog post about what the AI could do.',
     impact: 'IBM -13.2%. Worst day in 25 years. $31 billion erased. From a blog post.',
+    image: '/ibm-cobol.jpg',
   },
   {
     id: 'dod',
     date: 'Feb 2026',
     label: 'DoD + War',
-    position: 98, // Was 88
+    position: 98,
     size: 36,
     headline: 'Killer Robots + War Imminent',
     description: 'Department of Defense demands access to AI models for autonomous weapons. Simultaneously: largest US military buildup in the Middle East since 2003. Two carrier groups. F-22s in Israel. Nuclear talks collapsed.',
     impact: '"War could be imminent." — Multiple outlets. The graph\'s highest amplitude nodes are overlapping.',
+    image: '/military-buildup.jpg',
   },
 ];
 
@@ -139,12 +147,22 @@ export default function Acceleration({ step }) {
 
         {/* Descriptor Details for Active Event */}
         {step >= 1 && step <= timelineEvents.length + 2 && activeEventIndex >= 0 && activeEventIndex < timelineEvents.length && (
-          <div className="timeline-detail fade-in" key={timelineEvents[activeEventIndex].id}>
-            <div className="date">{timelineEvents[activeEventIndex].date}</div>
-            <h3>{timelineEvents[activeEventIndex].headline}</h3>
-            <p>{timelineEvents[activeEventIndex].description}</p>
-            {timelineEvents[activeEventIndex].impact && (
-              <div className="stock-impact">{timelineEvents[activeEventIndex].impact}</div>
+          <div className="timeline-detail-row fade-in" key={timelineEvents[activeEventIndex].id}>
+            <div className="timeline-detail" style={{ flex: 1, minWidth: 0 }}>
+              <div className="date">{timelineEvents[activeEventIndex].date}</div>
+              <h3>{timelineEvents[activeEventIndex].headline}</h3>
+              <p>{timelineEvents[activeEventIndex].description}</p>
+              {timelineEvents[activeEventIndex].impact && (
+                <div className="stock-impact">{timelineEvents[activeEventIndex].impact}</div>
+              )}
+            </div>
+            {timelineEvents[activeEventIndex].image && (
+              <div className="timeline-image">
+                <img
+                  src={timelineEvents[activeEventIndex].image}
+                  alt={timelineEvents[activeEventIndex].headline}
+                />
+              </div>
             )}
           </div>
         )}

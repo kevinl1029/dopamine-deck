@@ -66,9 +66,6 @@ export default function Opening({ step }) {
             An <span className="mono-text">algorithm</span> decided this format was trending.
             It surfaced it to creators. Distribution systems pushed it across your feeds.
           </p>
-          <p className="mono-text fade-in-delay-2" style={{ marginTop: '24px', fontSize: '1rem' }}>
-            Keep that word in mind: algorithm.
-          </p>
         </div>
       )}
     </div>
