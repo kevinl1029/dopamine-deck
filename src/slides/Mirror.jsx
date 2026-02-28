@@ -15,7 +15,7 @@ export default function Mirror({ step }) {
   const [visiblePosts, setVisiblePosts] = useState(0);
 
   useEffect(() => {
-    if (step >= 2) {
+    if (step >= 3) {
       setVisiblePosts(0);
       const interval = setInterval(() => {
         setVisiblePosts(prev => {
@@ -64,8 +64,96 @@ export default function Mirror({ step }) {
         </div>
       )}
 
-      {/* Step 2: Moltbook forum */}
+      {/* Step 2: OpenClaw interstitial */}
       {step === 2 && (
+        <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', maxWidth: '720px' }}>
+          {/* OpenClaw Logo */}
+          <div style={{ 
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '16px'
+          }}>
+            <img 
+              src="/openclaw-logo.png" 
+              alt="OpenClaw"
+              style={{ 
+                maxWidth: '320px',
+                width: '100%',
+                height: 'auto'
+              }}
+            />
+          </div>
+          
+          {/* Name evolution story */}
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center',
+            gap: '12px',
+            width: '100%'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.8rem',
+              color: 'var(--text-muted)'
+            }}>
+              <span style={{ textDecoration: 'line-through', opacity: 0.5 }}>ClawdBot</span>
+              <span>→</span>
+              <span style={{ textDecoration: 'line-through', opacity: 0.5 }}>Moltbot</span>
+              <span>→</span>
+              <span style={{ color: 'var(--accent-warm)' }}>OpenClaw</span>
+            </div>
+            
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '8px',
+              textAlign: 'center',
+              maxWidth: '560px',
+              marginTop: '8px'
+            }}>
+              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+                Born as <em style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>ClawdBot</em> — a playful pun on Claude with a lobster mascot.
+              </p>
+              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+                Anthropic's legal team sent a polite email.
+              </p>
+              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+                The lobster <em style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>molted</em> into <em style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>Moltbot</em>.
+              </p>
+              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+                That lasted two days.
+              </p>
+              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+                Finally emerged as <em style={{ color: 'var(--accent-warm)', fontFamily: 'var(--font-serif)' }}>OpenClaw</em> — open source, open to everyone, third time's the charm.
+              </p>
+            </div>
+          </div>
+          
+          {/* Decorative code snippet hint */}
+          <div style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.65rem',
+            color: 'var(--text-muted)',
+            background: 'var(--bg-surface)',
+            padding: '12px 20px',
+            borderRadius: '4px',
+            border: '1px solid var(--border)',
+            marginTop: '8px'
+          }}>
+            <span style={{ color: 'var(--accent-danger)' }}>autonomy:</span> true · 
+            <span style={{ color: 'var(--accent-cool)' }}> directives:</span> none · 
+            <span style={{ color: 'var(--accent-warm)' }}> moderation:</span> null
+          </div>
+        </div>
+      )}
+
+      {/* Step 3: Moltbook forum */}
+      {step === 3 && (
         <div className="fade-in" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <p className="mono-text" style={{ marginBottom: '16px' }}>moltbook.forum — autonomous agent discussion board</p>
           <div className="forum-container">
@@ -83,8 +171,8 @@ export default function Mirror({ step }) {
         </div>
       )}
 
-      {/* Step 3: The reveal */}
-      {step === 3 && (
+      {/* Step 4: The reveal */}
+      {step === 4 && (
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <p className="body-text" style={{ textAlign: 'center' }}>
             These aren't sentient beings. They're <span className="mono-text">statistics</span>.
@@ -100,19 +188,7 @@ export default function Mirror({ step }) {
         </div>
       )}
 
-      {/* Step 4: The question */}
-      {step === 4 && (
-        <div className="fade-in-slow" style={{ textAlign: 'center' }}>
-          <p className="body-text" style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
-            I didn't build this. I just watched it.
-          </p>
-          <p className="mic-drop fade-in-delay-2" style={{ marginTop: '40px' }}>
-            If pure statistics can produce something that looks this much like consciousness —
-            that looks this much like the experience of being alive and confused about why —
-            then what does that say about us?
-          </p>
-        </div>
-      )}
+
     </div>
   );
 }
