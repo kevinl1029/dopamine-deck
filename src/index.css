@@ -356,7 +356,7 @@ html, body, #root {
   position: absolute;
   white-space: nowrap;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   transform: translateX(-50%);
   left: 50%;
@@ -365,9 +365,9 @@ html, body, #root {
 
 .timeline-detail-row {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   align-items: center;
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -382,7 +382,7 @@ html, body, #root {
 .timeline-image img {
   width: 100%;
   height: 100%;
-  max-height: 280px;
+  max-height: 320px;
   object-fit: cover;
   display: block;
 }
@@ -391,8 +391,8 @@ html, body, #root {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 24px 32px;
-  max-width: 600px;
+  padding: 28px 36px;
+  max-width: 650px;
   width: 100%;
   z-index: 10;
   text-align: left;
@@ -401,28 +401,28 @@ html, body, #root {
 
 .timeline-detail h3 {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--accent-warm);
   margin-bottom: 8px;
 }
 
 .timeline-detail .date {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 12px;
 }
 
 .timeline-detail p {
-  font-size: 0.95rem; /* Slightly larger */
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  line-height: 1.6; /* Better leading */
+  line-height: 1.65;
   margin-bottom: 8px;
 }
 
 .timeline-detail .stock-impact {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--accent-danger);
   margin-top: 12px;
   padding-top: 12px;

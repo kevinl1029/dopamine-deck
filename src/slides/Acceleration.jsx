@@ -2,26 +2,26 @@ import { useState, useEffect } from 'react';
 
 const timelineEvents = [
   {
-    id: 'opus-45',
-    date: 'Nov 24, 2025',
-    label: 'Opus 4.5',
-    position: 4,
-    size: 22,
-    headline: 'Claude Opus 4.5 Released',
-    description: 'One of the most capable AI models ever built. Overnight, regular people can build real software by describing what they want. "Vibe coding" enters the lexicon.',
-    impact: 'The barrier between idea and execution nearly disappears.',
-    image: '/opus45-announce.jpg',
-  },
-  {
     id: 'epstein-act',
     date: 'Nov 19, 2025',
     label: 'Epstein Act',
-    position: 12,
+    position: 4,
     size: 18,
     headline: 'Epstein Files Transparency Act Signed',
     description: 'Federal legislation mandating release of documents related to Jeffrey Epstein. The gate opens.',
     impact: null,
     image: '/epstein-act.jpg',
+  },
+  {
+    id: 'opus-45',
+    date: 'Nov 24, 2025',
+    label: 'Opus 4.5',
+    position: 12,
+    size: 22,
+    headline: 'Claude Opus 4.5 Released',
+    description: 'One of the most capable AI models ever built. Overnight, regular people can build real software by describing what they want. "Vibe coding" enters the lexicon.',
+    impact: 'The barrier between idea and execution nearly disappears.',
+    image: '/opus45-announce.jpg',
   },
   {
     id: 'epstein-release',
@@ -125,8 +125,8 @@ export default function Acceleration({ step }) {
 
   return (
     <div className={scrollingUp ? 'scroll-up-exit' : ''} style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', position: 'relative' }}>
-      {/* Top Half: Descriptor Region */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 40px' }}>
+      {/* Top Region: Descriptor (takes most of the space) */}
+      <div style={{ flex: 3, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 40px', minHeight: 0 }}>
         {/* Step 0: Intro */}
         {step === 0 && (
           <div className="fade-in" style={{ textAlign: 'center', maxWidth: '800px' }}>
@@ -175,8 +175,8 @@ export default function Acceleration({ step }) {
         )}
       </div>
 
-      {/* Bottom Half: Timeline Region */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'relative', minHeight: '300px' }}>
+      {/* Bottom: Timeline Bar (fixed size, not shrinkable) */}
+      <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'relative', height: '220px' }}>
         {/* Steps 1+: Timeline */}
         {step >= 1 && step <= timelineEvents.length + 2 && (
           <div className="timeline-container fade-in">

@@ -66,19 +66,19 @@ export default function Mirror({ step }) {
 
       {/* Step 2: OpenClaw interstitial */}
       {step === 2 && (
-        <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px', maxWidth: '720px' }}>
+        <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px', maxWidth: '900px' }}>
           {/* OpenClaw Logo */}
-          <div style={{ 
+          <div style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             gap: '16px'
           }}>
-            <img 
-              src="/openclaw-logo.png" 
+            <img
+              src="/openclaw-logo.png"
               alt="OpenClaw"
-              style={{ 
-                maxWidth: '320px',
+              style={{
+                maxWidth: '400px',
                 width: '100%',
                 height: 'auto'
               }}
@@ -96,9 +96,9 @@ export default function Mirror({ step }) {
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: '14px',
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.8rem',
+              fontSize: '0.95rem',
               color: 'var(--text-muted)'
             }}>
               <span style={{ textDecoration: 'line-through', opacity: 0.5 }}>ClawdBot</span>
@@ -111,24 +111,24 @@ export default function Mirror({ step }) {
             <div style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '8px',
+              gap: '12px',
               textAlign: 'center',
-              maxWidth: '560px',
-              marginTop: '8px'
+              maxWidth: '700px',
+              marginTop: '12px'
             }}>
-              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+              <p className="body-text" style={{ fontSize: '1.15rem', margin: 0 }}>
                 Born as <em style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>ClawdBot</em> — a playful pun on Claude with a lobster mascot.
               </p>
-              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+              <p className="body-text" style={{ fontSize: '1.15rem', margin: 0 }}>
                 Anthropic's legal team sent a polite email.
               </p>
-              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+              <p className="body-text" style={{ fontSize: '1.15rem', margin: 0 }}>
                 The lobster <em style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>molted</em> into <em style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-serif)' }}>Moltbot</em>.
               </p>
-              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+              <p className="body-text" style={{ fontSize: '1.15rem', margin: 0 }}>
                 That lasted two days.
               </p>
-              <p className="body-text" style={{ fontSize: '0.95rem', margin: 0 }}>
+              <p className="body-text" style={{ fontSize: '1.15rem', margin: 0 }}>
                 Finally emerged as <em style={{ color: 'var(--accent-warm)', fontFamily: 'var(--font-serif)' }}>OpenClaw</em> — open source, open to everyone, third time's the charm.
               </p>
             </div>
@@ -137,13 +137,13 @@ export default function Mirror({ step }) {
           {/* Decorative code snippet hint */}
           <div style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.65rem',
+            fontSize: '0.8rem',
             color: 'var(--text-muted)',
             background: 'var(--bg-surface)',
-            padding: '12px 20px',
+            padding: '14px 24px',
             borderRadius: '4px',
             border: '1px solid var(--border)',
-            marginTop: '8px'
+            marginTop: '12px'
           }}>
             <span style={{ color: 'var(--accent-danger)' }}>autonomy:</span> true · 
             <span style={{ color: 'var(--accent-cool)' }}> directives:</span> none · 
