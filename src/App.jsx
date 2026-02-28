@@ -12,9 +12,9 @@ import Close from './slides/Close';
 const slideConfigs = [
   { id: 'opening', steps: 7, component: Opening },
   { id: 'mirror', steps: 5, component: Mirror },
-  { id: 'graph', steps: 4, component: Graph },
-  { id: 'acceleration', steps: 12, component: Acceleration },  // 1 intro + 9 events + scroll trigger + quiet
-  { id: 'abundance', steps: 6, component: AbundanceTrap },
+  { id: 'graph', steps: 5, component: Graph },
+  { id: 'acceleration', steps: 11, component: Acceleration },  // 1 intro + 8 events + scroll trigger + quiet
+  { id: 'abundance', steps: 8, component: AbundanceTrap },
   { id: 'antidote', steps: 5, component: Antidote },
   { id: 'seducer', steps: 5, component: Seducer },
   { id: 'close', steps: 5, component: Close },

@@ -2,16 +2,6 @@ import { useState, useEffect } from 'react';
 
 const timelineEvents = [
   {
-    id: 'ppt-night',
-    date: 'This week',
-    label: 'PPT Night',
-    position: 5,
-    size: 14,
-    headline: 'PPT Night Trend',
-    description: 'A trending Instagram format reaches you from 3 different group chats in 48 hours. A small node — a cultural ripple. But it moved fast.',
-    impact: null,
-  },
-  {
     id: 'opus-45',
     date: 'Nov 24, 2025',
     label: 'Opus 4.5',
