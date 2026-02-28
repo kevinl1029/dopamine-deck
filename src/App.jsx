@@ -10,7 +10,7 @@ import Seducer from './slides/Seducer';
 import Close from './slides/Close';
 
 const slideConfigs = [
-  { id: 'opening', steps: 6, component: Opening },
+  { id: 'opening', steps: 7, component: Opening },
   { id: 'mirror', steps: 5, component: Mirror },
   { id: 'graph', steps: 4, component: Graph },
   { id: 'acceleration', steps: 12, component: Acceleration },  // 1 intro + 9 events + scroll trigger + quiet
