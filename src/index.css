@@ -11,8 +11,8 @@
   --bg-surface: #111111;
   --bg-elevated: #1a1a1a;
   --text-primary: #f0f0f0;
-  --text-secondary: #888888;
-  --text-muted: #555555;
+  --text-secondary: #b0b0b0;
+  --text-muted: #707070;
   --accent-warm: #e8a84c;
   --accent-cool: #4c8ce8;
   --accent-danger: #e84c4c;
@@ -108,6 +108,7 @@ html, body, #root {
   letter-spacing: -0.02em;
   max-width: 900px;
   text-align: center;
+  margin-inline: auto;
 }
 
 .hero-text em {
@@ -123,6 +124,7 @@ html, body, #root {
   max-width: 800px;
   text-align: center;
   color: var(--text-primary);
+  margin-inline: auto;
 }
 
 .body-text {
@@ -132,6 +134,17 @@ html, body, #root {
   max-width: 720px;
   color: var(--text-secondary);
   text-align: left;
+  margin-inline: auto;
+}
+
+.body-text-subdued {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 720px;
+  color: var(--text-muted);
+  text-align: left;
+  margin-inline: auto;
 }
 
 .mono-text {
@@ -148,6 +161,7 @@ html, body, #root {
   max-width: 800px;
   text-align: center;
   color: var(--text-primary);
+  margin-inline: auto;
 }
 
 .section-label {
@@ -168,6 +182,7 @@ html, body, #root {
   color: var(--text-primary);
   font-style: italic;
   font-family: var(--font-serif);
+  margin-inline: auto;
 }
 
 /* Animations */
@@ -183,11 +198,11 @@ html, body, #root {
   animation: fadeIn 1.5s ease forwards;
 }
 
-.fade-in-delay-1 { animation-delay: 0.3s; opacity: 0; }
-.fade-in-delay-2 { animation-delay: 0.6s; opacity: 0; }
-.fade-in-delay-3 { animation-delay: 0.9s; opacity: 0; }
-.fade-in-delay-4 { animation-delay: 1.2s; opacity: 0; }
-.fade-in-delay-5 { animation-delay: 1.5s; opacity: 0; }
+.fade-in-delay-1 { animation: fadeIn 0.8s ease forwards; animation-delay: 0.3s; opacity: 0; }
+.fade-in-delay-2 { animation: fadeIn 0.8s ease forwards; animation-delay: 0.6s; opacity: 0; }
+.fade-in-delay-3 { animation: fadeIn 0.8s ease forwards; animation-delay: 0.9s; opacity: 0; }
+.fade-in-delay-4 { animation: fadeIn 0.8s ease forwards; animation-delay: 1.2s; opacity: 0; }
+.fade-in-delay-5 { animation: fadeIn 0.8s ease forwards; animation-delay: 1.5s; opacity: 0; }
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -305,7 +320,7 @@ html, body, #root {
   width: 90%;
   max-width: 1100px;
   position: relative;
-  height: 500px;
+  height: 200px; /* Reduced since no detail card inside */
   overflow: visible;
 }
 
@@ -349,17 +364,15 @@ html, body, #root {
 }
 
 .timeline-detail {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 20px 28px;
-  max-width: 500px;
-  width: 90%;
+  padding: 24px 32px;
+  max-width: 600px; /* Slightly wider */
+  width: 100%;
   z-index: 10;
+  text-align: left; /* Ensure text alignment */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Lift it off the background */
 }
 
 .timeline-detail h3 {
@@ -377,19 +390,31 @@ html, body, #root {
 }
 
 .timeline-detail p {
-  font-size: 0.9rem;
+  font-size: 0.95rem; /* Slightly larger */
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6; /* Better leading */
   margin-bottom: 8px;
 }
 
 .timeline-detail .stock-impact {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--accent-danger);
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
+}
+
+/* Stacking Shake Animation for chaotic nodes */
+.stacking-shake {
+  animation: stackingShake 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes stackingShake {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  25% { transform: translate(calc(-50% - 1px), calc(-50% + 1px)) rotate(-1deg) scale(1.02); }
+  75% { transform: translate(calc(-50% + 1px), calc(-50% - 1px)) rotate(1deg) scale(0.98); }
+  100% { transform: translate(-50%, -50%) rotate(0deg) scale(1.05); }
 }
 
 /* RPE Diagram */
@@ -463,23 +488,23 @@ html, body, #root {
 .hexagram {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
   margin: 40px 0;
 }
 
 .hexagram-line {
-  width: 80px;
-  height: 6px;
+  width: 200px;
+  height: 14px;
   background: var(--text-primary);
-  border-radius: 1px;
+  border-radius: 2px;
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
 }
 
 .hexagram-line.broken {
-  width: 80px;
-  height: 6px;
+  width: 200px;
+  height: 14px;
   background: transparent;
   position: relative;
 }
@@ -490,9 +515,9 @@ html, body, #root {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 34px;
+  width: 85px;
   background: var(--text-primary);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 .hexagram-line.broken::before { left: 0; }

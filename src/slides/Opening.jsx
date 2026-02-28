@@ -4,7 +4,7 @@ export default function Opening({ step }) {
       {/* Step 0: The question */}
       {step === 0 && (
         <h1 className="hero-text fade-in">
-          Why are we here tonight?
+          Why are we here today?
         </h1>
       )}
 

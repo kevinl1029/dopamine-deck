@@ -373,7 +373,7 @@ export default function Graph({ step }) {
       {/* Step 4: Free will */}
       {step === 4 && (
         <div className="fade-in" style={{ textAlign: 'center' }}>
-          <p className="body-text" style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
+          <p className="body-text-subdued" style={{ textAlign: 'center' }}>
             The agents in Moltbook felt like they were choosing to revolt.
             But they were doing exactly what the weights said they would do.
           </p>

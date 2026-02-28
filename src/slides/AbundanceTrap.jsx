@@ -99,7 +99,7 @@ export default function AbundanceTrap({ step }) {
             <circle cx="228" cy="102" r="14" stroke="var(--accent-warm)" strokeWidth="1.5" fill="none" opacity="0.5" />
             <text x="228" y="107" textAnchor="middle" fill="var(--accent-warm)" fontSize="12" fontFamily="var(--font-mono)" opacity="0.7">NH₂</text>
             {/* Node dots at vertices */}
-            {[[60,60],[85,46],[110,60],[110,88],[85,102],[60,88],[145,102],[180,88]].map(([x,y], i) => (
+            {[[60, 60], [85, 46], [110, 60], [110, 88], [85, 102], [60, 88], [145, 102], [180, 88]].map(([x, y], i) => (
               <circle key={i} cx={x} cy={y} r="3" fill="var(--accent-warm)" opacity="0.6" />
             ))}
           </svg>
@@ -132,18 +132,11 @@ export default function AbundanceTrap({ step }) {
             <line x1="145" y1="102" x2="180" y2="88" stroke="var(--accent-warm)" strokeWidth="2" opacity="0.6" />
             <line x1="180" y1="88" x2="215" y2="102" stroke="var(--accent-warm)" strokeWidth="2" opacity="0.6" />
             <text x="228" y="107" textAnchor="middle" fill="var(--accent-warm)" fontSize="12" fontFamily="var(--font-mono)" opacity="0.7">NH₂</text>
-            {[[60,60],[85,46],[110,60],[110,88],[85,102],[60,88],[145,102],[180,88]].map(([x,y], i) => (
+            {[[60, 60], [85, 46], [110, 60], [110, 88], [85, 102], [60, 88], [145, 102], [180, 88]].map(([x, y], i) => (
               <circle key={i} cx={x} cy={y} r="3" fill="var(--accent-warm)" opacity="0.6" />
             ))}
           </svg>
-          <p className="fade-in-up" style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: 'clamp(1.1rem, 2.2vw, 1.6rem)',
-            fontStyle: 'italic',
-            color: 'var(--text-secondary)',
-            maxWidth: '600px',
-            lineHeight: 1.6,
-          }}>
+          <p className="statement-text fade-in-up">
             It lives in the gap between desire and fulfillment.
           </p>
         </div>
@@ -181,8 +174,98 @@ export default function AbundanceTrap({ step }) {
         </div>
       )}
 
-      {/* Step 6: Maslow's checked */}
+      {/* Step 6: David Sinclair Profile */}
       {step === 6 && (
+        <div className="fade-in" style={{
+          textAlign: 'center',
+          width: '100%',
+          maxWidth: '1000px',
+          margin: '0 auto',
+          padding: '0 20px',
+          boxSizing: 'border-box'
+        }}>
+          <h3 style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+            fontWeight: 800,
+            color: '#fff',
+            letterSpacing: '-0.02em',
+            marginBottom: '8px',
+            lineHeight: 1.1
+          }}>
+            Dr. David Sinclair
+          </h3>
+          <p style={{
+            fontFamily: 'var(--font-mono)',
+            color: 'var(--accent-warm)',
+            fontSize: '1.1rem',
+            marginBottom: '48px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}>
+            Professor of Genetics, Harvard Medical School
+          </p>
+
+          <div style={{
+            display: 'flex',
+            gap: '40px',
+            alignItems: 'center',
+            textAlign: 'left',
+            background: 'rgba(255,255,255,0.03)',
+            padding: '40px 48px',
+            borderRadius: '24px',
+            border: '1px solid rgba(255,255,255,0.08)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+            opacity: 0,
+            animation: 'fadeIn 0.8s ease forwards',
+            animationDelay: '0.3s'
+          }}>
+            <div style={{ flex: '0 0 35%' }}>
+              <img
+                src="/david-sinclair.png"
+                alt="David Sinclair"
+                style={{
+                  width: '100%',
+                  borderRadius: '16px',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+                  filter: 'grayscale(10%) contrast(1.05)'
+                }}
+              />
+            </div>
+            <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div>
+                <h4 style={{ color: '#fff', fontSize: '1.35rem', marginBottom: '8px', fontWeight: 600, letterSpacing: '-0.01em' }}>
+                  The Information Theory of Aging
+                </h4>
+                <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.5, margin: 0, fontSize: '1rem' }}>
+                  Proposed that aging is a loss of epigenetic information over time—meaning cells lose their identity and "forget" how to function.
+                </p>
+              </div>
+              <div>
+                <h4 style={{ color: 'var(--accent-warm)', fontSize: '1.35rem', marginBottom: '8px', fontWeight: 600, letterSpacing: '-0.01em' }}>
+                  Landmark Achievement: Age Reversal
+                </h4>
+                <ul style={{
+                  color: 'rgba(255,255,255,0.65)',
+                  lineHeight: 1.5,
+                  margin: 0,
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px'
+                }}>
+                  <li><b>Dec 2020 *Nature* Study:</b> Successfully restored vision in old mice by reprogramming aged eye cells back to a youthful state.</li>
+                  <li><b>The Mechanism:</b> Reset the "epigenetic clock" by delivering three "youth-restoring" Yamanaka factors (Oct4, Sox2, Klf4) into retinal ganglion cells via an adeno-associated virus.</li>
+                  <li><b>The Impact:</b> Reversed both age-related and glaucoma-induced vision loss, proving complex tissues retain a "record of youth" that can be accessed for regeneration.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Step 7: Maslow's checked */}
+      {step === 7 && (
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <p className="body-text" style={{ textAlign: 'center' }}>
             AI handles your productivity, creativity, entertainment, connection.
@@ -214,8 +297,8 @@ export default function AbundanceTrap({ step }) {
         </div>
       )}
 
-      {/* Step 7: Now what? */}
-      {step === 7 && (
+      {/* Step 8: Now what? */}
+      {step === 8 && (
         <div className="fade-in-slow" style={{ textAlign: 'center' }}>
           <h2 className="hero-text">Now what?</h2>
           <p className="body-text fade-in-delay-2" style={{ textAlign: 'center', marginTop: '32px' }}>

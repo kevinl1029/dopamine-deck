@@ -172,8 +172,59 @@ export default function Antidote({ step }) {
         </div>
       )}
 
-      {/* Step 1: RPE explanation */}
+      {/* Step 1: Unhooked showcase */}
       {step === 1 && (
+        <div className="fade-in" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px' }}>
+          <h2 style={{
+            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+            fontWeight: 800,
+            letterSpacing: '-0.03em',
+            color: '#fff',
+            lineHeight: 1,
+          }}>
+            <span style={{ color: 'var(--accent-warm)' }}>Unhooked</span>
+          </h2>
+          <p className="mono-text fade-in-delay-1" style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+            getunhooked.app
+          </p>
+          <div className="fade-in-delay-2" style={{
+            display: 'flex',
+            gap: '24px',
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+            width: '100%',
+            maxWidth: '700px',
+          }}>
+            {[
+              { src: '/unhooked-landing.png', alt: 'Unhooked marketing site', delay: '' },
+              { src: '/unhooked-dashboard.png', alt: 'Unhooked dashboard', delay: 'fade-in-delay-3' },
+              { src: '/unhooked-chat.png', alt: 'Unhooked conversation', delay: 'fade-in-delay-4' },
+            ].map((screen) => (
+              <div
+                key={screen.src}
+                className={screen.delay}
+                style={{
+                  flex: '0 1 200px',
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  boxShadow: '0 16px 40px rgba(0,0,0,0.4)',
+                  background: '#0a0a0a',
+                }}
+              >
+                <img
+                  src={screen.src}
+                  alt={screen.alt}
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Step 2: RPE explanation */}
+      {step === 2 && (
         <div className="fade-in" style={{ textAlign: 'center', width: '100%' }}>
           <p className="mono-text" style={{ marginBottom: '8px' }}>Reward Prediction Error</p>
           <p className="body-text" style={{ textAlign: 'center', marginBottom: '24px' }}>
@@ -184,8 +235,8 @@ export default function Antidote({ step }) {
         </div>
       )}
 
-      {/* Step 2: Nicotine connection */}
-      {step === 2 && (
+      {/* Step 3: Nicotine connection */}
+      {step === 3 && (
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <p className="body-text" style={{ textAlign: 'center' }}>
             This is exactly what nicotine exploits. It spikes reward beyond prediction.
@@ -202,8 +253,8 @@ export default function Antidote({ step }) {
         </div>
       )}
 
-      {/* Step 3: Variable RPE */}
-      {step === 3 && (
+      {/* Step 4: Variable RPE */}
+      {step === 4 && (
         <div className="fade-in" style={{ textAlign: 'center', width: '100%' }}>
           <p className="body-text" style={{ textAlign: 'center', marginBottom: '8px' }}>
             Unhooked uses variable Reward Prediction Error <em style={{ color: 'var(--accent-warm)' }}>intentionally</em>.
@@ -218,8 +269,8 @@ export default function Antidote({ step }) {
         </div>
       )}
 
-      {/* Step 4: Cheap to build */}
-      {step === 4 && (
+      {/* Step 5: Cheap to build */}
+      {step === 5 && (
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <p className="body-text" style={{ textAlign: 'center' }}>
             And here's why this is possible now: <span className="mono-text">building is cheap</span>.

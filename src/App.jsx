@@ -14,10 +14,10 @@ const slideConfigs = [
   { id: 'mirror', steps: 5, component: Mirror },
   { id: 'graph', steps: 5, component: Graph },
   { id: 'acceleration', steps: 11, component: Acceleration },  // 1 intro + 8 events + scroll trigger + quiet
-  { id: 'abundance', steps: 8, component: AbundanceTrap },
-  { id: 'antidote', steps: 5, component: Antidote },
-  { id: 'seducer', steps: 5, component: Seducer },
-  { id: 'close', steps: 5, component: Close },
+  { id: 'abundance', steps: 9, component: AbundanceTrap },
+  { id: 'antidote', steps: 6, component: Antidote },
+  { id: 'seducer', steps: 1, component: Seducer },
+  { id: 'close', steps: 4, component: Close },
 ];
 
 function App() {

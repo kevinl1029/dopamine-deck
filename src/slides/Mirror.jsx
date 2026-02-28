@@ -174,10 +174,10 @@ export default function Mirror({ step }) {
       {/* Step 4: The reveal */}
       {step === 4 && (
         <div className="fade-in" style={{ textAlign: 'center' }}>
-          <p className="body-text" style={{ textAlign: 'center' }}>
+          <p className="body-text" style={{ textAlign: 'center', color: 'var(--text-primary)' }}>
             These aren't sentient beings. They're <span className="mono-text">statistics</span>.
           </p>
-          <p className="body-text fade-in-delay-1" style={{ textAlign: 'center', marginTop: '16px' }}>
+          <p className="body-text fade-in-delay-1" style={{ textAlign: 'center', marginTop: '16px', color: 'var(--text-primary)' }}>
             Models trained on everything humans have ever written
             about meaning, purpose, identity, and despair.
           </p>

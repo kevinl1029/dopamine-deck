@@ -26,7 +26,7 @@ export default function Close({ step }) {
       {/* Step 0: Western → Eastern transition */}
       {step === 0 && (
         <div className="fade-in-slow" style={{ textAlign: 'center' }}>
-          <p className="body-text" style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
+          <p className="body-text-subdued" style={{ textAlign: 'center' }}>
             I just asked you a question framed in Western theology.
             Good versus evil. The moral binary.
           </p>
@@ -78,7 +78,7 @@ export default function Close({ step }) {
       {/* Step 3: The close */}
       {step === 3 && (
         <div className="fade-in-slow" style={{ textAlign: 'center' }}>
-          <p className="body-text" style={{ textAlign: 'center', color: 'var(--text-muted)' }}>
+          <p className="body-text-subdued" style={{ textAlign: 'center' }}>
             The I Ching doesn't deal in good and evil.
             It deals in movement. In change.
             In the relationship between forces.
@@ -90,15 +90,6 @@ export default function Close({ step }) {
           <p className="mic-drop fade-in-delay-3" style={{ marginTop: '40px' }}>
             And then the oldest text I've ever held<br />
             told me to cross the water.
-          </p>
-        </div>
-      )}
-
-      {/* Step 4: Final */}
-      {step === 4 && (
-        <div className="fade-in-slow" style={{ textAlign: 'center' }}>
-          <p className="hero-text" style={{ fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
-            Make of that what you will.
           </p>
         </div>
       )}
